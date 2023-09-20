@@ -1,0 +1,16 @@
+{% load static %}
+
+{% for product in cart.products.all %}
+
+{% empty %}
+
+{% endfor %}
+{% if cart.products.all %}
+
+{% endif %}
+Product	Price
+{{ product.name }}	{{ product.price }}
+Your cart is empty.
+Total Price:	{{ cart.total_price }}
+
+{% csrf_token %}

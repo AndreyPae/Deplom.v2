@@ -1,0 +1,36 @@
+{% load static %}
+
+Product List
+
+{% if user.is_authenticated %}
+Welcome, {{ user.username }}! Logout
+
+
+{% else %}
+Login
+
+
+{% endif %}
+{% for product in products %}
+
+{{ product.name }}
+
+Category: {{ product.category }}
+
+
+Price: {{ product.price }}
+
+
+{% if user.is_authenticated and user.is_superuser %}
+Edit
+Delete
+{% else %}
+Add to Cart
+{% endif %}
+
+{% endfor %}
+{% if user.is_authenticated %}
+View Cart
+
+
+{% endif %}

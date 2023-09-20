@@ -1,0 +1,9 @@
+{% load static %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+
+{% endfor %}
+{% endif %}
+
+{% csrf_token %}
